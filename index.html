@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Rawdatul Hufadh Madrasah — A centre of Quranic excellence in Ikorodu, Lagos. Enrol today."/>
+  <meta name="keywords" content="Rawdatul Hufadh, Madrasah, Quran, Hifz, Islamic School, Ikorodu, Lagos"/>
+  <meta property="og:title" content="Rawdatul Hufadh | روضةُ الحُفَّاظ"/>
+  <meta property="og:description" content="A centre of Quranic excellence — Ogabi Estate, Ijede, Ikorodu, Lagos."/>
+  <meta property="og:type" content="website"/>
+  <title>Rawdatul Hufadh </title>
+  <title>روضةُ الحُفَّاظ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --teal:#0d6b6b;--teal-mid:#0a8080;--teal-lt:#12a5a5;
+      --gold:#c8922a;--gold-lt:#e8b84b;--gold-glow:#f0d080;
+      --cream:#fdf8f0;--dark:#050f0f;--dark2:#0a1e1e;
+      --text:#1a2e2e;--muted:#5a7a7a;--white:#fff;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--dark);overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:76px;background:rgba(5,15,15,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,146,42,0.28);transition:background .3s}
+    .nav-logo{display:flex;align-items:center;gap:13px;text-decoration:none}
+    .logo-emblem{width:50px;height:50px;border-radius:50%;border:2px solid rgba(200,146,42,0.55);background:linear-gradient(135deg,var(--teal),var(--dark2));display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.4rem;color:var(--gold-lt);flex-shrink:0;box-shadow:0 0 14px rgba(200,146,42,0.18)}
+    .logo-text{display:flex;flex-direction:column;line-height:1.18}
+    .logo-text .en{font-family:'Cinzel',serif;font-size:.95rem;font-weight:700;color:var(--gold-lt);letter-spacing:.05em}
+    .logo-text .ar{font-family:'Amiri',serif;font-size:1.08rem;color:rgba(255,255,255,0.72);margin-top:1px}
+    .nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+    .nav-links a{color:rgba(255,255,255,0.72);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;transition:color .25s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+    .nav-links a:hover{color:var(--gold-lt)}.nav-links a:hover::after{width:100%}
+    .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--dark)!important;padding:.46rem 1.3rem;border-radius:4px;font-weight:700!important;letter-spacing:.06em!important}
+    .nav-cta::after{display:none!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+    .hamburger span{width:24px;height:2px;background:var(--white);display:block;transition:.3s}
+    .mobile-menu{display:none;flex-direction:column;position:fixed;top:76px;left:0;right:0;background:rgba(5,15,15,0.98);border-bottom:1px solid rgba(200,146,42,0.2);z-index:999}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;padding:1rem 5%;font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.05);text-transform:uppercase;letter-spacing:.05em}
+    .mobile-menu a:hover{color:var(--gold-lt);background:rgba(200,146,42,0.04)}
+
+    /* HOME / HERO */
+    #home{position:relative;height:100vh;min-height:620px;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 38%,rgba(13,107,107,0.4) 0%,transparent 58%),radial-gradient(ellipse at 18% 75%,rgba(200,146,42,0.16) 0%,transparent 50%),linear-gradient(160deg,#030d0d 0%,#091c1c 45%,#060f0f 100%)}
+    .hero-pattern{position:absolute;inset:0;opacity:.052;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 44px),repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 44px)}
+    .hero-ring{position:absolute;right:-80px;top:5%;width:520px;height:520px;border:1px solid rgba(200,146,42,0.12);border-radius:50%;animation:spin 50s linear infinite}
+    .hero-ring::before{content:'';position:absolute;inset:28px;border:1px solid rgba(200,146,42,0.07);border-radius:50%}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .slider{position:relative;width:100%;height:100%}
+    .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 1.3s ease;text-align:center;padding:0 6%}
+    .slide.active{opacity:1}
+    .slide-inner{max-width:860px}
+    .slide-badge{display:inline-block;margin-bottom:1.4rem;padding:.3rem 1.1rem;border:1px solid rgba(200,146,42,0.55);color:var(--gold);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;animation:fadeUp .7s ease both}
+    .slide-ar{font-family:'Amiri',serif;font-size:clamp(1.6rem,4vw,2.7rem);color:var(--gold-lt);line-height:1.7;margin-bottom:1rem;direction:rtl;text-align:center;animation:fadeUp .8s .1s ease both}
+    .slide-en{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.3vw,1.35rem);color:rgba(255,255,255,0.8);line-height:1.75;animation:fadeUp .8s .2s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+    .hero-cta{position:absolute;bottom:13%;left:50%;transform:translateX(-50%);display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1s .5s ease both;opacity:0;animation-fill-mode:forwards}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--dark);padding:.8rem 2.2rem;border-radius:5px;font-weight:700;font-size:.88rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;box-shadow:0 4px 22px rgba(200,146,42,0.45);transition:transform .2s,box-shadow .2s}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,146,42,0.55)}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.32);color:var(--white);padding:.8rem 2.2rem;border-radius:5px;font-weight:500;font-size:.88rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:border-color .2s,background .2s}
+    .btn-ghost:hover{border-color:var(--gold-lt);background:rgba(200,146,42,0.1)}
+    .slider-dots{position:absolute;bottom:5.5%;left:50%;transform:translateX(-50%);display:flex;gap:.65rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.22);cursor:pointer;transition:.3s}
+    .dot.active{background:var(--gold);transform:scale(1.35)}
+    .scroll-cue{position:absolute;bottom:1.5%;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.22);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.35rem}
+    .scroll-cue::after{content:'';display:block;width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,255,255,0.22),transparent);animation:pulse 1.6s ease infinite}
+    @keyframes pulse{0%,100%{opacity:.22}50%{opacity:.9}}
+
+    /* SECTION BASE */
+    section{padding:92px 5%}
+    .sec-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.6rem}
+    .sec-ar{font-family:'Amiri',serif;font-size:clamp(1.1rem,2.2vw,1.6rem);color:var(--teal-mid);margin-bottom:.4rem}
+    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:700;line-height:1.15;color:var(--dark)}
+    .divider{width:48px;height:3px;background:linear-gradient(to right,var(--gold),var(--gold-lt));margin:1rem 0 2.5rem}
+
+    /* ABOUT */
+    #about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
+    .about-card{background:linear-gradient(135deg,var(--teal),var(--dark2));border-radius:10px;padding:3rem 2.5rem;color:var(--white);text-align:center;position:relative;overflow:hidden}
+    .about-card::before{content:'';position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 22px)}
+    .about-card .big-ar{font-family:'Amiri',serif;font-size:2.8rem;color:var(--gold-lt);line-height:1.35;margin-bottom:.8rem}
+    .about-card .sub{font-size:.88rem;color:rgba(255,255,255,0.65);line-height:1.75}
+    .stat-strip{display:flex;margin-top:1.5rem;border-top:1px solid rgba(200,146,42,0.3)}
+    .stat-item{flex:1;padding:1rem .5rem;text-align:center;border-right:1px solid rgba(200,146,42,0.2)}
+    .stat-item:last-child{border-right:none}
+    .stat-num{font-size:1.5rem;font-weight:700;color:var(--gold-lt);font-family:'Cormorant Garamond',serif}
+    .stat-lbl{font-size:.62rem;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
+    .about-text p{color:#3a5a5a;line-height:1.85;margin-bottom:1rem;font-size:.94rem}
+    .class-box{margin-top:2rem;padding:1.4rem 1.6rem;border-left:4px solid var(--teal-mid);background:rgba(13,107,107,0.06);border-radius:0 7px 7px 0}
+    .class-box h4{color:var(--teal);font-weight:600;margin-bottom:.4rem;font-size:.95rem}
+    .class-box p{color:var(--muted);font-size:.88rem;margin:0}
+
+    /* VISION */
+    #vision{background:linear-gradient(160deg,var(--dark2) 0%,#040c0c 100%);position:relative;overflow:hidden}
+    #vision::before{content:'';position:absolute;inset:0;opacity:.04;background:repeating-linear-gradient(60deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 32px)}
+    .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1000px;margin:2.5rem auto 0}
+    .vision-card{background:rgba(255,255,255,0.034);border:1px solid rgba(200,146,42,0.2);border-radius:10px;padding:2.5rem;transition:border-color .3s,background .3s}
+    .vision-card:hover{border-color:var(--gold);background:rgba(200,146,42,0.04)}
+    .vision-card .vi-icon{font-size:1.8rem;margin-bottom:.9rem}
+    .vision-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-lt);margin-bottom:.25rem}
+    .vision-card .ar-sub{font-family:'Amiri',serif;font-size:1.05rem;color:rgba(200,146,42,0.6);margin-bottom:.9rem}
+    .arabic-body{font-family:'Amiri',serif;font-size:1.1rem;color:rgba(200,146,42,0.82);direction:rtl;text-align:right;line-height:1.8;margin-bottom:.9rem}
+    .vision-card p{color:rgba(255,255,255,0.6);line-height:1.8;font-size:.88rem}
+    #vision .sec-title{color:var(--white)}
+
+    /* PROGRAMS */
+    #programs{background:var(--white)}
+    .prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .prog-card{border:1px solid #dde8e8;border-radius:10px;padding:2rem 1.5rem;position:relative;overflow:hidden;transition:.3s}
+    .prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--teal),var(--gold))}
+    .prog-card:hover{box-shadow:0 12px 40px rgba(13,107,107,0.13);transform:translateY(-4px)}
+    .prog-icon{font-size:1.9rem;margin-bottom:.9rem}
+    .prog-card h3{font-family:'Cormorant Garamond',serif;font-size:1.28rem;color:var(--dark);margin-bottom:.3rem}
+    .prog-card .par{font-family:'Amiri',serif;font-size:.95rem;color:var(--teal-mid);margin-bottom:.7rem}
+    .prog-card p{color:var(--muted);font-size:.86rem;line-height:1.72}
+
+    /* NEWS */
+    #news{background:var(--cream)}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .news-card{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:.3s}
+    .news-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(13,107,107,0.11)}
+    .news-img{height:155px;display:flex;align-items:center;justify-content:center;font-size:2.7rem}
+    .ni-teal{background:linear-gradient(135deg,var(--teal),var(--dark2))}
+    .ni-gold{background:linear-gradient(135deg,#7a5010,var(--teal))}
+    .ni-green{background:linear-gradient(135deg,#1a5020,var(--teal))}
+    .ni-purple{background:linear-gradient(135deg,#3a1a5a,var(--teal))}
+    .news-body{padding:1.4rem}
+    .news-date{font-size:.7rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.45rem}
+    .news-body h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.45rem}
+    .news-body p{color:var(--muted);font-size:.84rem;line-height:1.7}
+
+    /* GALLERY */
+    #gallery{background:var(--dark2)}
+    #gallery .sec-title{color:var(--white)}
+    #gallery .sec-ar{color:var(--gold-lt)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1050px;margin:0 auto}
+    .g-item{border-radius:8px;overflow:hidden;cursor:pointer;position:relative;transition:transform .3s;aspect-ratio:4/3;background:#0a1e1e;border:1px solid rgba(200,146,42,0.1)}
+    .g-item:hover{transform:scale(1.03)}
+    .g-item svg{width:100%;height:100%;display:block}
+    .g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,15,15,0.82) 0%,transparent 60%);opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:1rem 1.2rem}
+    .g-item:hover .g-overlay{opacity:1}
+    .g-caption{font-family:'Amiri',serif;font-size:1rem;color:var(--gold-lt);direction:rtl}
+
+    /* TESTIMONIALS */
+    #testimonials{background:var(--white)}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+    .testi-card{border:1px solid #e0ecec;border-radius:10px;padding:2rem;position:relative}
+    .testi-card::before{content:'❝';position:absolute;top:.8rem;right:1.4rem;font-size:3.2rem;color:rgba(13,107,107,0.08);font-family:'Cormorant Garamond',serif;line-height:1}
+    .testi-card p{color:var(--muted);font-size:.9rem;line-height:1.82;margin-bottom:1.2rem;font-style:italic}
+    .ar-text{font-family:'Amiri',serif!important;direction:rtl;text-align:right;font-style:normal!important;font-size:1.05rem!important;color:#3a6060!important}
+    .testi-name{font-weight:600;color:var(--teal);font-size:.84rem}
+    .testi-role{color:var(--gold);font-size:.73rem}
+    .stars{color:var(--gold);font-size:.9rem;margin-bottom:.8rem}
+
+    /* ENROLMENT */
+    #enrolment{background:linear-gradient(160deg,var(--dark2),#040c0c);position:relative;overflow:hidden}
+    #enrolment::before{content:'';position:absolute;inset:0;opacity:.04;background:repeating-linear-gradient(-45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 28px)}
+    #enrolment .sec-title{color:var(--white)}
+    #enrolment .sec-ar{color:var(--gold-lt)}
+    .enrol-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1.7fr;gap:3rem;align-items:start;position:relative;z-index:1}
+    .enrol-info{padding-top:.5rem}
+    .enrol-info h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--white);margin-bottom:1rem}
+    .enrol-info p{color:rgba(255,255,255,0.5);font-size:.88rem;line-height:1.8;margin-bottom:1.5rem}
+    .enrol-details{display:flex;flex-direction:column;gap:.9rem}
+    .enrol-detail{display:flex;gap:.9rem;align-items:flex-start}
+    .e-icon{width:38px;height:38px;border-radius:7px;background:rgba(200,146,42,0.1);border:1px solid rgba(200,146,42,0.22);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .e-text h4{color:var(--gold-lt);font-size:.82rem;font-weight:600;margin-bottom:.15rem}
+    .e-text p{color:rgba(255,255,255,0.45);font-size:.8rem}
+    .form-box{background:rgba(255,255,255,0.038);border:1px solid rgba(200,146,42,0.2);border-radius:12px;padding:2.5rem}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+    .fg{display:flex;flex-direction:column;gap:.38rem}
+    .fg.full{grid-column:span 2}
+    .fg label{font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,0.42)}
+    .fg input,.fg select,.fg textarea{background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:.78rem 1rem;color:var(--white);font-family:'Outfit',sans-serif;font-size:.88rem;width:100%;transition:border-color .2s}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+    .fg textarea{resize:vertical;min-height:90px}
+    select option{background:var(--dark2)}
+    .form-btn{width:100%;margin-top:1.4rem;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--dark);border:none;padding:.95rem;border-radius:6px;font-size:.95rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:opacity .2s,transform .2s}
+    .form-btn:hover{opacity:.9;transform:translateY(-1px)}
+    .success-msg{display:none;text-align:center;padding:2.5rem 1rem}
+    .success-msg .s-ar{font-family:'Amiri',serif;font-size:1.9rem;color:var(--gold-lt);display:block;margin-bottom:.5rem}
+    .success-msg .s-en{color:rgba(255,255,255,0.5);font-size:.9rem;line-height:1.7}
+
+    /* CONTACT */
+    #contact{background:var(--cream)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;max-width:960px;margin:0 auto;align-items:start}
+    .contact-item{display:flex;gap:1.1rem;align-items:flex-start;margin-bottom:1.6rem}
+    .c-icon{width:46px;height:46px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .c-icon svg{width:22px;height:22px}
+    .ci-teal{background:linear-gradient(135deg,var(--teal),var(--teal-mid))}
+    .ci-gold{background:linear-gradient(135deg,#8a5a10,var(--gold))}
+    .c-info h4{font-weight:600;color:var(--dark);margin-bottom:.2rem;font-size:.9rem}
+    .c-info p,.c-info a{color:var(--muted);font-size:.87rem;text-decoration:none;line-height:1.55}
+    .c-info a:hover{color:var(--teal)}
+    .social-row{display:flex;gap:.7rem;margin-top:2rem;flex-wrap:wrap}
+    .soc-btn{display:flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border:1px solid rgba(13,107,107,0.3);border-radius:7px;color:var(--teal);font-size:.79rem;font-weight:600;text-decoration:none;transition:.22s}
+    .soc-btn svg{width:15px;height:15px}
+    .soc-btn:hover{background:var(--teal);color:var(--white);border-color:var(--teal)}
+    .map-card{background:linear-gradient(135deg,var(--teal),var(--dark2));border-radius:12px;overflow:hidden}
+    .map-visual{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(160deg,rgba(13,107,107,0.75),rgba(5,15,15,0.9))}
+    .map-info{padding:1.5rem}
+    .map-info h4{color:var(--gold-lt);font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.6rem}
+    .map-info p{color:rgba(255,255,255,0.58);font-size:.85rem;line-height:1.65}
+    .map-info .ar-addr{font-family:'Amiri',serif;direction:rtl;text-align:right;color:rgba(200,146,42,0.65);font-size:1rem;margin-top:.5rem}
+    .map-link{display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:rgba(200,146,42,0.13);border:1px solid rgba(200,146,42,0.28);border-radius:5px;color:var(--gold-lt);font-size:.8rem;font-weight:600;text-decoration:none;transition:.2s}
+    .map-link:hover{background:var(--gold);color:var(--dark)}
+
+    /* FOOTER */
+    footer{background:var(--dark);border-top:1px solid rgba(200,146,42,0.15);padding:3.5rem 5% 1.8rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 2rem}
+    .footer-logo .en{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold-lt)}
+    .footer-logo .ar{font-family:'Amiri',serif;font-size:1.3rem;color:var(--white);display:block;margin-top:.15rem}
+    .footer-logo p{color:rgba(255,255,255,0.4);font-size:.83rem;margin-top:.8rem;line-height:1.72}
+    .f-col h5{color:var(--gold);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+    .f-col a{display:block;color:rgba(255,255,255,0.42);text-decoration:none;font-size:.84rem;margin-bottom:.5rem;transition:.2s}
+    .f-col a:hover{color:var(--gold-lt)}
+    .footer-bottom{text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.22);font-size:.76rem}
+    .footer-bottom .fbar{font-family:'Amiri',serif;font-size:1rem;color:rgba(200,146,42,0.42);display:block;margin-bottom:.3rem}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){.enrol-wrap{grid-template-columns:1fr}.enrol-info{display:none}}
+    @media(max-width:768px){
+      .nav-links{display:none}.hamburger{display:flex}
+      .about-grid,.vision-grid,.contact-grid,.footer-grid,.form-grid{grid-template-columns:1fr}
+      .fg.full{grid-column:span 1}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      section{padding:72px 5%}
+      .hero-ring{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="logo-emblem">ح</div>
+    <div class="logo-text">
+      <span class="en">Rawdatul Hufadh</span>
+      <span class="ar">رَوْضَةُ الحُفَّاظ</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#enrolment" class="nav-cta">Enrol Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#vision" onclick="toggleMenu()">Vision &amp; Mission</a>
+  <a href="#programs" onclick="toggleMenu()">Programs</a>
+  <a href="#news" onclick="toggleMenu()">News &amp; Events</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#enrolment" onclick="toggleMenu()">Enrol Now</a>
+</div>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-ring"></div>
+  <div class="slider">
+    <div class="slide active">
+      <div class="slide-inner">
+        <div class="slide-badge">Welcome — أَهْلاً وَسَهْلاً</div>
+        <div class="slide-ar">رَوْضَةُ الحُفَّاظِ — بَيْتُ الْقُرْآنِ الْكَرِيمِ</div>
+        <div class="slide-en">Rawdatul Hufadh — The Garden of the Quran's Guardians.<br/>Begin your journey with the Book of Allāh today.</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-inner">
+        <div class="slide-badge">Our Mission — رِسَالَتُنَا</div>
+        <div class="slide-ar">نُرَسِّخُ فِي قُلُوبِ الطُّلَّابِ حُبَّ الْقُرْآنِ وَالْعِلْمِ الشَّرْعِيِّ</div>
+        <div class="slide-en">We plant in the hearts of our students a deep love for the Quran and Islamic knowledge — nurturing the scholars of tomorrow.</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-inner">
+        <div class="slide-badge">Class Hours — أَوْقَاتُ الدِّرَاسَةِ</div>
+        <div class="slide-ar">الدِّرَاسَةُ مِنَ السَّاعَةِ التَّاسِعَةِ صَبَاحًا حَتَّى الثَّانِيَةِ ظُهْرًا</div>
+        <div class="slide-en">Classes run Monday to Saturday, 9:00 AM – 2:00 PM.<br/>Dedicated teachers. Structured curriculum. Nurturing environment.</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-inner">
+        <div class="slide-badge">Monthly Lectures — مُحَاضَرَاتٌ شَهْرِيَّةٌ</div>
+        <div class="slide-ar">مُحَاضَرَاتٌ إِسْلَامِيَّةٌ عَامَّةٌ فِي كُلِّ آخِرِ أَحَدٍ مِنَ الشَّهْرِ</div>
+        <div class="slide-en">Public Islamic lectures are held every last Sunday of the month.<br/>Open to all — families, students, and the wider community.</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-inner">
+        <div class="slide-badge">Excellence — التَّمَيُّزُ</div>
+        <div class="slide-ar">نَجْمَعُ بَيْنَ الحِفْظِ وَالتَّجْوِيدِ وَالأَخْلَاقِ الإِسْلَامِيَّةِ</div>
+        <div class="slide-en">A holistic curriculum combining Hifz, Tajweed, Arabic, and Islamic Studies — complete Quranic formation for every student.</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#enrolment" class="btn-gold">Enrol Now — سَجِّلْ الآنَ</a>
+    <a href="#about" class="btn-ghost">Learn More</a>
+  </div>
+  <div class="slider-dots" id="sliderDots"></div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-card">
+        <div class="big-ar">رَوْضَةُ الحُفَّاظ</div>
+        <p class="sub">A place where the Quran takes root in young hearts, and where knowledge illuminates every path forward.</p>
+        <div class="stat-strip">
+          <div class="stat-item"><div class="stat-num">★★★★★</div><div class="stat-lbl">Rated</div></div>
+          <div class="stat-item"><div class="stat-num">9–2</div><div class="stat-lbl">Daily Hours</div></div>
+          <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Dedication</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="sec-label">About Us</div>
+      <div class="sec-ar">عَنِ الْمَدْرَسَةِ</div>
+      <h2 class="sec-title">Where the Quran Meets the Heart</h2>
+      <div class="divider"></div>
+      <p>Rawdatul Hufadh — رَوْضَةُ الحُفَّاظ — is a madrasah dedicated to the preservation, understanding, and embodiment of the Noble Quran. Rooted in authentic Islamic scholarship, we provide a structured, nurturing environment for students of all ages.</p>
+      <p>Our experienced Ustadz guide every student through a comprehensive Quranic curriculum — from foundational recitation to complete memorisation — always with patience, care, and taqwā.</p>
+      <div class="class-box">
+        <h4>Class Schedule</h4>
+        <p>Monday – Saturday &nbsp;|&nbsp; <strong>9:00 AM – 2:00 PM</strong></p>
+        <p style="margin-top:.3rem;font-size:.82rem;color:#7a9a9a">Consistent, structured daily learning for optimal Quran retention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section id="vision">
+  <div style="max-width:1000px;margin:0 auto">
+    <div class="reveal">
+      <div class="sec-label">Our Foundation</div>
+      <h2 class="sec-title">Vision &amp; Mission</h2>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-card reveal">
+        <div class="vi-icon">👁</div>
+        <h3>Our Vision</h3>
+        <div class="ar-sub">رُؤْيَتُنَا</div>
+        <p class="arabic-body">أَنْ نَكُونَ مَرْجِعًا رَائِدًا فِي تَحْفِيظِ الْقُرْآنِ الْكَرِيمِ وَتَعْلِيمِ الْعُلُومِ الإِسْلَامِيَّةِ، مُرَبِّينَ جِيلاً مُسْتَنِيرًا بِنُورِ الْوَحْيِ.</p>
+        <p>To be a leading centre of Quranic memorisation and Islamic sciences, raising a generation illuminated by the light of divine revelation — carrying the Quran in their hearts and living it in their character.</p>
+      </div>
+      <div class="vision-card reveal">
+        <div class="vi-icon">🌱</div>
+        <h3>Our Mission</h3>
+        <div class="ar-sub">مُهِمَّتُنَا</div>
+        <p class="arabic-body">تَقْدِيمُ تَعْلِيمٍ قُرْآنِيٍّ أَصِيلٍ فِي بِيئَةٍ مُحِبَّةٍ، تَجْمَعُ بَيْنَ الحِفْظِ وَالتَّجْوِيدِ وَالتَّرْبِيَةِ الإِسْلَامِيَّةِ الشَّامِلَةِ.</p>
+        <p>To provide authentic Quranic education in a loving environment, combining Hifz, Tajweed, Arabic language, and wholesome Islamic character development under qualified and devoted teachers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal">
+      <div class="sec-label">What We Offer</div>
+      <div class="sec-ar">بَرَامِجُنَا الدِّرَاسِيَّةُ</div>
+      <h2 class="sec-title">Our Programs &amp; Courses</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card reveal"><div class="prog-icon">📖</div><h3>Hifz ul-Quran</h3><div class="par">حِفْظُ الْقُرْآنِ الْكَرِيمِ</div><p>Complete memorisation of the Noble Quran under qualified Huffadh, with consistent revision and structured testing.</p></div>
+      <div class="prog-card reveal"><div class="prog-icon">🎙</div><h3>Tajweed</h3><div class="par">أَحْكَامُ التَّجْوِيدِ</div><p>Mastering the rules of Quranic recitation — Makhaarij, Sifaat, and the modes of recitation — for beautiful, accurate tilāwah.</p></div>
+      <div class="prog-card reveal"><div class="prog-icon">✍</div><h3>Qa'idah &amp; Noorani</h3><div class="par">الْقَاعِدَةُ النُّورَانِيَّةُ</div><p>Beginner-level Quran reading for young students, building a solid foundation in Arabic letters and pronunciation.</p></div>
+      <div class="prog-card reveal"><div class="prog-icon">🌙</div><h3>Islamic Studies</h3><div class="par">الدِّرَاسَاتُ الإِسْلَامِيَّةُ</div><p>Fiqh, Sīrah, Aqeedah, and Hadith studies to build complete understanding of the Deen alongside the Quran.</p></div>
+      <div class="prog-card reveal"><div class="prog-icon">🔤</div><h3>Arabic Language</h3><div class="par">تَعْلِيمُ اللُّغَةِ الْعَرَبِيَّةِ</div><p>Arabic grammar (Nahw &amp; Sarf) and vocabulary to help students understand and connect deeply with the Quran.</p></div>
+      <div class="prog-card reveal"><div class="prog-icon">🔁</div><h3>Murāja'ah &amp; Revision</h3><div class="par">الْمُرَاجَعَةُ وَالتَّثْبِيتُ</div><p>Structured daily revision sessions ensuring long-term retention of all memorised Quranic portions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal">
+      <div class="sec-label">Stay Updated</div>
+      <div class="sec-ar">الأَخْبَارُ وَالفَعَالِيَاتُ</div>
+      <h2 class="sec-title">News &amp; Events</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-img ni-teal">📣</div>
+        <div class="news-body">
+          <div class="news-date">Admissions Open — 2026</div>
+          <h4>Enrolment for New Students Now Open</h4>
+          <p>We are pleased to announce the opening of admissions for the new academic term. Limited spaces are available — register early to secure your child's place.</p>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-img ni-green">🕌</div>
+        <div class="news-body">
+          <div class="news-date">Monthly — Every Last Sunday</div>
+          <h4>Public Islamic Lectures — مُحَاضَرَاتٌ إِسْلَامِيَّةٌ</h4>
+          <p>Alhamdulillāh, we hold public Islamic lectures every last Sunday of the month at the madrasah. All community members — students, parents, and guests — are warmly welcome to attend.</p>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-img ni-gold">🏆</div>
+        <div class="news-body">
+          <div class="news-date">Recent Achievement</div>
+          <h4>Students Complete Hifz — جَزَاهُمُ اللهُ خَيْرًا</h4>
+          <p>Alhamdulillāh, several students have completed the memorisation of the entire Quran. May Allāh accept from them and make them a light for their families and community.</p>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-img ni-purple">🌟</div>
+        <div class="news-body">
+          <div class="news-date">Upcoming Event</div>
+          <h4>Quranic Recitation Competition — مُسَابَقَةٌ قُرْآنِيَّةٌ</h4>
+          <p>An inter-class Tajweed and recitation competition will be held soon. Students are encouraged to prepare diligently and participate with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem">
+      <div class="sec-label">Our Moments</div>
+      <div class="sec-ar">مَعْرِضُ الصُّوَرِ</div>
+      <h2 class="sec-title">Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+
+      <!-- 1 Arabic books stack -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#0a1c14"/>
+          <rect x="0" y="178" width="320" height="62" fill="#060e0a"/>
+          <!-- books -->
+          <rect x="58" y="82" width="78" height="108" fill="#1a5535" rx="3"/>
+          <rect x="58" y="82" width="13" height="108" fill="#0f3320" rx="2"/>
+          <text x="105" y="140" font-family="serif" font-size="11" fill="rgba(200,146,42,0.75)" text-anchor="middle">الْقُرْآن</text>
+          <rect x="96" y="90" width="74" height="100" fill="#8a3010" rx="3"/>
+          <rect x="96" y="90" width="12" height="100" fill="#5a1e08" rx="2"/>
+          <text x="135" y="145" font-family="serif" font-size="10" fill="rgba(240,208,128,0.8)" text-anchor="middle">التَّجْوِيد</text>
+          <rect x="136" y="76" width="80" height="114" fill="#c8922a" rx="3"/>
+          <rect x="136" y="76" width="13" height="114" fill="#8a5a0a" rx="2"/>
+          <text x="178" y="136" font-family="serif" font-size="10" fill="#fff" text-anchor="middle">الْفِقْه</text>
+          <rect x="52" y="176" width="190" height="16" fill="#0d3d28" rx="3"/>
+          <text x="147" y="188" font-family="serif" font-size="8.5" fill="rgba(200,146,42,0.65)" text-anchor="middle">رِيَاضُ الصَّالِحِينَ</text>
+          <!-- bookmark -->
+          <rect x="192" y="66" width="7" height="26" fill="#e8b84b" rx="1"/>
+          <polygon points="192,92 195.5,100 199,92" fill="#e8b84b"/>
+          <circle cx="48" cy="58" r="2" fill="rgba(200,146,42,0.3)"/>
+          <circle cx="272" cy="52" r="1.5" fill="rgba(200,146,42,0.22)"/>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">كُتُبٌ عَرَبِيَّةٌ إِسْلَامِيَّةٌ</span></div>
+      </div>
+
+      <!-- 2 Open Quran on stand -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#050f0a"/>
+          <ellipse cx="160" cy="215" rx="75" ry="9" fill="rgba(0,0,0,0.35)"/>
+          <rect x="132" y="190" width="7" height="28" fill="#5a3a10" rx="2"/>
+          <rect x="181" y="190" width="7" height="28" fill="#5a3a10" rx="2"/>
+          <rect x="118" y="208" width="84" height="6" fill="#5a3a10" rx="2"/>
+          <rect x="52" y="58" width="216" height="150" fill="#f5efd8" rx="4"/>
+          <rect x="52" y="58" width="216" height="6" fill="#e8d4a0" rx="2"/>
+          <rect x="157" y="58" width="14" height="150" fill="#c8b080" rx="1"/>
+          <!-- left page -->
+          <text x="108" y="84" font-family="serif" font-size="8.5" fill="#5a3a10" text-anchor="middle">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</text>
+          <line x1="70" y1="90" x2="150" y2="90" stroke="#c8b080" stroke-width="0.8" opacity="0.45"/>
+          <text x="108" y="101" font-family="serif" font-size="8" fill="#7a5a20" text-anchor="middle">الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِينَ</text>
+          <line x1="70" y1="106" x2="150" y2="106" stroke="#c8b080" stroke-width="0.8" opacity="0.35"/>
+          <text x="108" y="117" font-family="serif" font-size="8" fill="#7a5a20" text-anchor="middle">الرَّحْمٰنِ الرَّحِيمِ</text>
+          <line x1="70" y1="122" x2="150" y2="122" stroke="#c8b080" stroke-width="0.8" opacity="0.35"/>
+          <text x="108" y="133" font-family="serif" font-size="8" fill="#7a5a20" text-anchor="middle">مٰلِكِ يَوْمِ الدِّينِ</text>
+          <!-- right page -->
+          <text x="212" y="84" font-family="serif" font-size="8.5" fill="#5a3a10" text-anchor="middle">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</text>
+          <line x1="172" y1="90" x2="252" y2="90" stroke="#c8b080" stroke-width="0.8" opacity="0.45"/>
+          <text x="212" y="101" font-family="serif" font-size="8" fill="#7a5a20" text-anchor="middle">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</text>
+          <line x1="172" y1="106" x2="252" y2="106" stroke="#c8b080" stroke-width="0.8" opacity="0.35"/>
+          <rect x="55" y="61" width="210" height="144" fill="none" stroke="#c8922a" stroke-width="1.3" rx="3" opacity="0.55"/>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">تِلَاوَةُ الْقُرْآنِ الْكَرِيمِ</span></div>
+      </div>
+
+      <!-- 3 Arabic calligraphy wall panel -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="cg" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a4a20"/><stop offset="100%" stop-color="#051510"/></radialGradient></defs>
+          <rect width="320" height="240" fill="url(#cg)"/>
+          <rect x="16" y="16" width="288" height="208" fill="none" stroke="#c8922a" stroke-width="2" rx="4" opacity="0.65"/>
+          <rect x="25" y="25" width="270" height="190" fill="none" stroke="#c8922a" stroke-width="1" rx="3" opacity="0.38"/>
+          <circle cx="25" cy="25" r="4" fill="#c8922a" opacity="0.55"/>
+          <circle cx="295" cy="25" r="4" fill="#c8922a" opacity="0.55"/>
+          <circle cx="25" cy="215" r="4" fill="#c8922a" opacity="0.55"/>
+          <circle cx="295" cy="215" r="4" fill="#c8922a" opacity="0.55"/>
+          <text x="160" y="88" font-family="serif" font-size="20" fill="#e8b84b" text-anchor="middle">اقْرَأْ بِاسْمِ رَبِّكَ</text>
+          <text x="160" y="116" font-family="serif" font-size="20" fill="#e8b84b" text-anchor="middle">الَّذِي خَلَقَ</text>
+          <line x1="78" y1="130" x2="242" y2="130" stroke="#c8922a" stroke-width="1" opacity="0.45"/>
+          <text x="160" y="153" font-family="serif" font-size="12" fill="rgba(200,146,42,0.7)" text-anchor="middle">سُورَةُ الْعَلَقِ — آيَةٌ ١</text>
+          <text x="160" y="186" font-family="sans-serif" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="middle">Recite in the name of your Lord who created</text>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">خَطٌّ عَرَبِيٌّ — آيَاتٌ قُرْآنِيَّةٌ</span></div>
+      </div>
+
+      <!-- 4 Classroom / study circle -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="240" fill="#061a10"/>
+          <rect x="28" y="18" width="264" height="104" fill="#0d3525" rx="4"/>
+          <rect x="28" y="18" width="264" height="104" fill="none" stroke="#1a5535" stroke-width="1.5" rx="4"/>
+          <text x="160" y="56" font-family="serif" font-size="14" fill="rgba(255,255,255,0.75)" text-anchor="middle">رَوْضَةُ الحُفَّاظ</text>
+          <text x="160" y="78" font-family="serif" font-size="9.5" fill="rgba(200,146,42,0.6)" text-anchor="middle">جَلَسَاتُ الحِفْظِ وَالتَّجْوِيدِ</text>
+          <line x1="48" y1="92" x2="272" y2="92" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="160" y="108" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.28)" text-anchor="middle">Hifz · Tajweed · Arabic · Islamic Studies</text>
+          <rect x="28" y="122" width="264" height="7" fill="#0a2818" rx="1"/>
+          <rect x="48" y="158" width="52" height="34" fill="#0d3525" rx="3" opacity="0.75"/>
+          <rect x="118" y="158" width="52" height="34" fill="#0d3525" rx="3" opacity="0.75"/>
+          <rect x="188" y="158" width="52" height="34" fill="#0d3525" rx="3" opacity="0.75"/>
+          <rect x="56" y="164" width="22" height="13" fill="#c8922a" rx="1" opacity="0.6"/>
+          <rect x="126" y="164" width="22" height="13" fill="#1a5535" rx="1" opacity="0.6"/>
+          <rect x="196" y="164" width="22" height="13" fill="#8a3010" rx="1" opacity="0.6"/>
+          <circle cx="74" cy="150" r="10" fill="#0d3525"/>
+          <circle cx="144" cy="150" r="10" fill="#0d3525"/>
+          <circle cx="214" cy="150" r="10" fill="#0d3525"/>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">حَلَقَاتُ الدِّرَاسَةِ الإِسْلَامِيَّةِ</span></div>
+      </div>
+
+      <!-- 5 Tasbih & pen -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="tg" cx="40%" cy="40%"><stop offset="0%" stop-color="#1a3a10"/><stop offset="100%" stop-color="#040e06"/></radialGradient></defs>
+          <rect width="320" height="240" fill="url(#tg)"/>
+          <g transform="translate(148,118)">
+            <circle r="72" fill="none" stroke="rgba(200,146,42,0.28)" stroke-width="1.5"/>
+            <circle cx="72" cy="0" r="7" fill="#c8922a"/><circle cx="62" cy="36" r="7" fill="#c8922a"/>
+            <circle cx="36" cy="62" r="7" fill="#c8922a"/><circle cx="0" cy="72" r="7" fill="#c8922a"/>
+            <circle cx="-36" cy="62" r="7" fill="#c8922a"/><circle cx="-62" cy="36" r="7" fill="#c8922a"/>
+            <circle cx="-72" cy="0" r="7" fill="#c8922a"/><circle cx="-62" cy="-36" r="7" fill="#c8922a"/>
+            <circle cx="-36" cy="-62" r="7" fill="#c8922a"/><circle cx="0" cy="-72" r="8" fill="#e8b84b"/>
+            <circle cx="36" cy="-62" r="7" fill="#c8922a"/><circle cx="62" cy="-36" r="7" fill="#c8922a"/>
+            <line x1="72" y1="0" x2="95" y2="24" stroke="#c8922a" stroke-width="2"/>
+            <line x1="95" y1="24" x2="90" y2="48" stroke="#8a5a10" stroke-width="1.5"/>
+            <line x1="95" y1="24" x2="100" y2="48" stroke="#8a5a10" stroke-width="1.5"/>
+            <line x1="95" y1="24" x2="105" y2="46" stroke="#8a5a10" stroke-width="1.5"/>
+          </g>
+          <text x="148" y="112" font-family="serif" font-size="11.5" fill="rgba(232,184,75,0.6)" text-anchor="middle">سُبْحَانَ الله</text>
+          <text x="148" y="128" font-family="serif" font-size="11.5" fill="rgba(232,184,75,0.48)" text-anchor="middle">الْحَمْدُ لله</text>
+          <!-- pen -->
+          <g transform="rotate(30,258,78)">
+            <rect x="254" y="38" width="8" height="76" fill="#d4aa40" rx="3"/>
+            <polygon points="258,114 262,114 260,128" fill="#a07820"/>
+            <rect x="254" y="38" width="8" height="14" fill="#c8922a" rx="2"/>
+          </g>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">الذِّكْرُ وَالتَّسْبِيحُ وَالتَّعَلُّمُ</span></div>
+      </div>
+
+      <!-- 6 Graduation certificate -->
+      <div class="g-item reveal">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a1e30"/><stop offset="100%" stop-color="#051510"/></linearGradient></defs>
+          <rect width="320" height="240" fill="url(#cbg)"/>
+          <rect x="32" y="32" width="256" height="176" fill="#f9f4e4" rx="5"/>
+          <rect x="32" y="32" width="256" height="176" fill="none" stroke="#c8922a" stroke-width="2" rx="5"/>
+          <rect x="40" y="40" width="240" height="160" fill="none" stroke="#c8922a" stroke-width="1" rx="3" opacity="0.45"/>
+          <rect x="32" y="32" width="256" height="38" fill="#0d4a28" rx="4 4 0 0"/>
+          <text x="160" y="57" font-family="serif" font-size="12.5" fill="#e8b84b" text-anchor="middle">شَهَادَةُ إِتْمَامِ الحِفْظِ</text>
+          <polygon points="160,86 165,101 182,101 169,111 174,126 160,116 146,126 151,111 138,101 155,101" fill="#c8922a" opacity="0.88"/>
+          <circle cx="160" cy="106" r="8" fill="#f9f4e4"/>
+          <text x="160" y="110" font-family="sans-serif" font-size="8" fill="#c8922a" text-anchor="middle">★</text>
+          <text x="160" y="148" font-family="serif" font-size="9" fill="#3a5a3a" text-anchor="middle">يُشْهَدُ لِحَامِلِ هَذِهِ الشَّهَادَةِ</text>
+          <text x="160" y="163" font-family="serif" font-size="9" fill="#3a5a3a" text-anchor="middle">بِإِتْمَامِ حِفْظِ الْقُرْآنِ الْكَرِيمِ</text>
+          <line x1="65" y1="176" x2="155" y2="176" stroke="#c8922a" stroke-width="0.8" opacity="0.5"/>
+          <text x="108" y="190" font-family="serif" font-size="7" fill="#7a7a5a" text-anchor="middle">رَوْضَةُ الحُفَّاظ</text>
+          <line x1="165" y1="176" x2="255" y2="176" stroke="#c8922a" stroke-width="0.8" opacity="0.5"/>
+          <text x="210" y="190" font-family="serif" font-size="7" fill="#7a7a5a" text-anchor="middle">Rawdatul Hufadh</text>
+        </svg>
+        <div class="g-overlay"><span class="g-caption">شَهَادَاتُ الحِفْظِ وَالتَّخَرُّجِ</span></div>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:rgba(255,255,255,0.25);font-size:.8rem;margin-top:1.5rem">Student and event photographs will be added as the madrasah grows.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="max-width:1000px;margin:0 auto">
+    <div class="reveal">
+      <div class="sec-label">Student Experiences</div>
+      <div class="sec-ar">تَجَارِبُ طُلَّابِنَا</div>
+      <h2 class="sec-title">What Our Students Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Rawdatul Hufadh changed my life. The teachers are patient, knowledgeable, and truly care about every student's progress. I completed my Hifz here and I am forever grateful."</p>
+        <div class="testi-name">Ahmad Musa</div>
+        <div class="testi-role">Former Student — Hafiz ul-Quran</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"The environment here is wonderful. My children love coming to class every day. The Ustadz are caring and the curriculum is structured perfectly. Highly recommended to every Muslim parent."</p>
+        <div class="testi-name">Umm Khadeejah</div>
+        <div class="testi-role">Parent of Two Students</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="ar-text">لَمْ أَتَخَيَّلْ أَنَّنِي سَأَحْفَظُ الْقُرْآنَ فِي هَذَا الْعُمُرِ. بِفَضْلِ اللهِ — ثُمَّ بِفَضْلِ مُعَلِّمِينَا الْكِرَامِ — حَقَّقْتُ حُلُمِي. جَزَاكُمُ اللهُ خَيْرًا.</p>
+        <p style="margin-top:.65rem;font-size:.82rem;font-style:normal;color:#6a9090">"I never imagined I would memorise the Quran at this age. By the grace of Allāh — then by the dedication of our noble teachers — I achieved my dream. May Allāh reward you all."</p>
+        <div class="testi-name">Abdullahi Yusuf</div>
+        <div class="testi-role">Current Student</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLMENT -->
+<section id="enrolment">
+  <div style="max-width:1060px;margin:0 auto;position:relative;z-index:1">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <div class="sec-label">Join Us</div>
+      <div class="sec-ar">التَّسْجِيلُ وَالقَبُولُ</div>
+      <h2 class="sec-title">Enrol at Rawdatul Hufadh</h2>
+      <p style="color:rgba(255,255,255,0.42);margin-top:.8rem;font-size:.88rem">Fill in the form below and our team will contact you shortly, in shaa Allāh.<br/>سَنَتَوَاصَلُ مَعَكُمْ فِي أَقْرَبِ وَقْتٍ.</p>
+    </div>
+    <!-- <div class="enrol-wrap">
+      <div class="enrol-info reveal">
+        <h3>Begin Your Quranic Journey</h3>
+        <p>Joining Rawdatul Hufadh is simple. Complete the form and we will reach out to guide you through the next steps, in shaa Allāh.</p>
+        <div class="enrol-details">
+          <div class="enrol-detail"><div class="e-icon">📅</div><div class="e-text"><h4>Class Hours</h4><p>Mon–Sat &nbsp;|&nbsp; 9:00 AM – 2:00 PM</p></div></div>
+          <div class="enrol-detail"><div class="e-icon">📞</div><div class="e-text"><h4>Contact Us</h4><p>0905 003 2784</p></div></div>
+          <div class="enrol-detail"><div class="e-icon">📍</div><div class="e-text"><h4>Location</h4><p>Ogabi Estate, Abule Eko, Ijede, Ikorodu, Lagos State</p></div></div>
+          <div class="enrol-detail"><div class="e-icon">✉️</div><div class="e-text"><h4>Email</h4><p>rawdatulhufadh@gmail.com</p></div></div>
+        </div>
+      </div> -->
+      <div class="form-box reveal">
+        <form id="enrolForm" onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <div class="fg"><label>Student's Full Name</label><input type="text" placeholder="Full name" required/></div>
+            <div class="fg"><label>Age</label><input type="number" placeholder="Age" min="4" max="60" required/></div>
+            <div class="fg"><label>Parent / Guardian Name</label><input type="text" placeholder="Parent's name" required/></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" placeholder="e.g. 0801 234 5678" required/></div>
+            <div class="fg full"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+            <div class="fg full">
+              <label>Programme of Interest</label>
+              <select required>
+                <option value="" disabled selected>Select a programme</option>
+                <option>Hifz ul-Quran (Full Memorisation)</option>
+                <option>Tajweed &amp; Recitation</option>
+                <option>Qa'idah / Noorani (Beginners)</option>
+                <option>Islamic Studies</option>
+                <option>Arabic Language</option>
+                <option>Multiple / Not Sure</option>
+              </select>
+            </div>
+            <div class="fg full">
+              <label>Prior Quranic Knowledge</label>
+              <select>
+                <option>None — Complete Beginner</option>
+                <option>Can read Arabic letters</option>
+                <option>Can read Quran slowly</option>
+                <option>Some Juz memorised</option>
+                <option>More than 5 Juz memorised</option>
+              </select>
+            </div>
+            <div class="fg full"><label>Additional Notes (optional)</label><textarea placeholder="Anything else you would like us to know..."></textarea></div>
+          </div>
+          <button type="submit" class="form-btn">Submit Application — أَرْسِلْ الطَّلَبَ</button>
+        </form>
+        <div class="success-msg" id="successMsg">
+          <span class="s-ar">جَزَاكُمُ اللهُ خَيْرًا — بَارَكَ اللهُ فِيكُمْ</span>
+          <span class="s-en">Your application has been received. We will contact you shortly, in shaa Allāh.<br/>May Allāh bless your pursuit of knowledge.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="max-width:960px;margin:0 auto">
+    <div class="reveal">
+      <div class="sec-label">Get In Touch</div>
+      <div class="sec-ar">تَوَاصَلْ مَعَنَا</div>
+      <h2 class="sec-title">Contact Us</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="c-icon ci-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.07 6.07l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="c-info"><h4>Phone &amp; WhatsApp</h4><a href="tel:09050032784">0905 003 2784</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon ci-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="c-info"><h4>Email Address</h4><a href="mailto:rawdatulhufadh@gmail.com">rawdatulhufadh@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon ci-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="c-info"><h4>Location</h4><p>Ogabi Estate, Abule Eko,<br/>Ijede, Ikorodu, Lagos State</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon ci-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="c-info"><h4>Class Hours</h4><p>Monday – Saturday: 9:00 AM – 2:00 PM</p><p style="margin-top:.2rem;font-size:.8rem;color:#9aaabb">Monthly lecture: Last Sunday of every month</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon ci-teal">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="c-info"><h4>Facebook</h4><a href="https://facebook.com" target="_blank">Abdul Rahman Ibrahim Ayinde</a></div>
+        </div>
+        <div class="social-row">
+          <a href="https://facebook.com" target="_blank" class="soc-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook
+          </a>
+          <a href="mailto:rawdatulhufadh@gmail.com" class="soc-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email
+          </a>
+          <a href="tel:09050032784" class="soc-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.07 6.07l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="map-card">
+          <div class="map-visual">🕌</div>
+          <div class="map-info">
+            <h4>Find Us</h4>
+            <p>Ogabi Estate, Abule Eko, Ijede,<br/>Ikorodu, Lagos State</p>
+            <p class="ar-addr">أُوغَابِي إِيسْتَيت، إِيجِيدِي — إِيكُورُودُو، لَاغُوس</p>
+            <a href="https://maps.google.com/?q=Ijede+Ikorodu+Lagos" target="_blank" class="map-link">Open in Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <span class="en">Rawdatul Hufadh</span>
+      <span class="ar">رَوْضَةُ الحُفَّاظ</span>
+      <p>A centre of Quranic excellence dedicated to nurturing the next generation of Huffadh and Islamic scholars — Ogabi Estate, Ijede, Ikorodu, Lagos.</p>
+    </div>
+    <div class="f-col">
+      <h5>Quick Links</h5>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#vision">Vision &amp; Mission</a>
+      <a href="#programs">Programs</a>
+      <a href="#news">News &amp; Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#enrolment">Enrol Now</a>
+    </div>
+    <div class="f-col">
+      <h5>Contact</h5>
+      <a href="tel:09050032784">0905 003 2784</a>
+      <a href="mailto:rawdatulhufadh@gmail.com">rawdatulhufadh@gmail.com</a>
+      <a href="https://facebook.com" target="_blank">Facebook Page</a>
+      <a style="color:rgba(255,255,255,0.25);cursor:default">Mon–Sat: 9:00 AM – 2:00 PM</a>
+      <a style="color:rgba(255,255,255,0.25);cursor:default">Monthly Lecture: Last Sunday</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="fbar">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+    &copy; 2025 Rawdatul Hufadh | رَوْضَةُ الحُفَّاظ — All Rights Reserved
+  </div>
+</footer>
+
+<script>
+  // SLIDER
+  const slides=document.querySelectorAll('.slide');
+  const dotsWrap=document.getElementById('sliderDots');
+  let cur=0,tmr;
+  slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>{go(i);restart()};dotsWrap.appendChild(d)});
+  function go(n){slides[cur].classList.remove('active');dotsWrap.children[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dotsWrap.children[cur].classList.add('active')}
+  function restart(){clearInterval(tmr);tmr=setInterval(()=>go(cur+1),5800)}
+  restart();
+
+  // HAMBURGER
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+  // SCROLL REVEAL
+  const revEls=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+  revEls.forEach(el=>obs.observe(el));
+
+  // FORM
+  function submitForm(e){e.preventDefault();document.getElementById('enrolForm').style.display='none';document.getElementById('successMsg').style.display='block'}
+
+  // NAV SCROLL
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>60?'rgba(3,10,10,0.99)':'rgba(5,15,15,0.96)'});
+</script>
+</body>
+</html>
